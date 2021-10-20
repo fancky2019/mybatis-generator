@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatisgenerator.dao.online.ClueMapper">
+  <resultMap id="BaseResultMap" type="com.example.mybatisgenerator.model.entity.online.Clue">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="clue_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="user_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pwd" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="seat_phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone_bak" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="post_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="birthday" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="region" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="customer_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="current_stage" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="current_grade" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="school" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="home_address" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="incoming_intent" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="intent_level" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="gender" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="init_channel" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="qq_number" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="new_channel" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="last_communited_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="next_communite_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="active_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="follow_user_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="follow_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="forward_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="institute_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="sign_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="create_user_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="is_deleted" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="create_at" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="update_at" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="student_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sea_area_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="tag_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="province_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="province_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="area_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="area_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="state" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="nickname" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, clue_name, user_id, pwd, phone, seat_phone, phone_bak, email, post_code, birthday, 
+    region, customer_id, current_stage, current_grade, school, home_address, incoming_intent, 
+    intent_level, gender, remark, init_channel, qq_number, new_channel, last_communited_time, 
+    next_communite_time, active_time, follow_user_id, follow_status, forward_status, 
+    institute_status, sign_status, create_user_id, is_deleted, create_at, update_at, 
+    student_id, sea_area_id, tag_id, province_code, province_value, city_code, city_value, 
+    area_code, area_value, state, nickname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_crm_clue
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_crm_clue
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    insert into t_crm_clue (id, clue_name, user_id, 
+      pwd, phone, seat_phone, 
+      phone_bak, email, post_code, 
+      birthday, region, customer_id, 
+      current_stage, current_grade, school, 
+      home_address, incoming_intent, intent_level, 
+      gender, remark, init_channel, 
+      qq_number, new_channel, last_communited_time, 
+      next_communite_time, active_time, follow_user_id, 
+      follow_status, forward_status, institute_status, 
+      sign_status, create_user_id, is_deleted, 
+      create_at, update_at, student_id, 
+      sea_area_id, tag_id, province_code, 
+      province_value, city_code, city_value, 
+      area_code, area_value, state, 
+      nickname)
+    values (#{id,jdbcType=BIGINT}, #{clueName,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{pwd,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{seatPhone,jdbcType=VARCHAR}, 
+      #{phoneBak,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=VARCHAR}, #{region,jdbcType=VARCHAR}, #{customerId,jdbcType=VARCHAR}, 
+      #{currentStage,jdbcType=VARCHAR}, #{currentGrade,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, 
+      #{homeAddress,jdbcType=VARCHAR}, #{incomingIntent,jdbcType=VARCHAR}, #{intentLevel,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{initChannel,jdbcType=VARCHAR}, 
+      #{qqNumber,jdbcType=VARCHAR}, #{newChannel,jdbcType=VARCHAR}, #{lastCommunitedTime,jdbcType=TIMESTAMP}, 
+      #{nextCommuniteTime,jdbcType=TIMESTAMP}, #{activeTime,jdbcType=TIMESTAMP}, #{followUserId,jdbcType=BIGINT}, 
+      #{followStatus,jdbcType=TINYINT}, #{forwardStatus,jdbcType=TINYINT}, #{instituteStatus,jdbcType=TINYINT}, 
+      #{signStatus,jdbcType=TINYINT}, #{createUserId,jdbcType=BIGINT}, #{isDeleted,jdbcType=TINYINT}, 
+      #{createAt,jdbcType=TIMESTAMP}, #{updateAt,jdbcType=TIMESTAMP}, #{studentId,jdbcType=VARCHAR}, 
+      #{seaAreaId,jdbcType=VARCHAR}, #{tagId,jdbcType=VARCHAR}, #{provinceCode,jdbcType=VARCHAR}, 
+      #{provinceValue,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, #{cityValue,jdbcType=VARCHAR}, 
+      #{areaCode,jdbcType=VARCHAR}, #{areaValue,jdbcType=VARCHAR}, #{state,jdbcType=TINYINT}, 
+      #{nickname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    insert into t_crm_clue
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="clueName != null">
+        clue_name,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="seatPhone != null">
+        seat_phone,
+      </if>
+      <if test="phoneBak != null">
+        phone_bak,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="postCode != null">
+        post_code,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="region != null">
+        region,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="currentStage != null">
+        current_stage,
+      </if>
+      <if test="currentGrade != null">
+        current_grade,
+      </if>
+      <if test="school != null">
+        school,
+      </if>
+      <if test="homeAddress != null">
+        home_address,
+      </if>
+      <if test="incomingIntent != null">
+        incoming_intent,
+      </if>
+      <if test="intentLevel != null">
+        intent_level,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="initChannel != null">
+        init_channel,
+      </if>
+      <if test="qqNumber != null">
+        qq_number,
+      </if>
+      <if test="newChannel != null">
+        new_channel,
+      </if>
+      <if test="lastCommunitedTime != null">
+        last_communited_time,
+      </if>
+      <if test="nextCommuniteTime != null">
+        next_communite_time,
+      </if>
+      <if test="activeTime != null">
+        active_time,
+      </if>
+      <if test="followUserId != null">
+        follow_user_id,
+      </if>
+      <if test="followStatus != null">
+        follow_status,
+      </if>
+      <if test="forwardStatus != null">
+        forward_status,
+      </if>
+      <if test="instituteStatus != null">
+        institute_status,
+      </if>
+      <if test="signStatus != null">
+        sign_status,
+      </if>
+      <if test="createUserId != null">
+        create_user_id,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="createAt != null">
+        create_at,
+      </if>
+      <if test="updateAt != null">
+        update_at,
+      </if>
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="seaAreaId != null">
+        sea_area_id,
+      </if>
+      <if test="tagId != null">
+        tag_id,
+      </if>
+      <if test="provinceCode != null">
+        province_code,
+      </if>
+      <if test="provinceValue != null">
+        province_value,
+      </if>
+      <if test="cityCode != null">
+        city_code,
+      </if>
+      <if test="cityValue != null">
+        city_value,
+      </if>
+      <if test="areaCode != null">
+        area_code,
+      </if>
+      <if test="areaValue != null">
+        area_value,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="clueName != null">
+        #{clueName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="seatPhone != null">
+        #{seatPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneBak != null">
+        #{phoneBak,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null">
+        #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="currentStage != null">
+        #{currentStage,jdbcType=VARCHAR},
+      </if>
+      <if test="currentGrade != null">
+        #{currentGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null">
+        #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="homeAddress != null">
+        #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="incomingIntent != null">
+        #{incomingIntent,jdbcType=VARCHAR},
+      </if>
+      <if test="intentLevel != null">
+        #{intentLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="initChannel != null">
+        #{initChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="qqNumber != null">
+        #{qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="newChannel != null">
+        #{newChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCommunitedTime != null">
+        #{lastCommunitedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nextCommuniteTime != null">
+        #{nextCommuniteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activeTime != null">
+        #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="followUserId != null">
+        #{followUserId,jdbcType=BIGINT},
+      </if>
+      <if test="followStatus != null">
+        #{followStatus,jdbcType=TINYINT},
+      </if>
+      <if test="forwardStatus != null">
+        #{forwardStatus,jdbcType=TINYINT},
+      </if>
+      <if test="instituteStatus != null">
+        #{instituteStatus,jdbcType=TINYINT},
+      </if>
+      <if test="signStatus != null">
+        #{signStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createUserId != null">
+        #{createUserId,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="createAt != null">
+        #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateAt != null">
+        #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="studentId != null">
+        #{studentId,jdbcType=VARCHAR},
+      </if>
+      <if test="seaAreaId != null">
+        #{seaAreaId,jdbcType=VARCHAR},
+      </if>
+      <if test="tagId != null">
+        #{tagId,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null">
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceValue != null">
+        #{provinceValue,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityValue != null">
+        #{cityValue,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaValue != null">
+        #{areaValue,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    update t_crm_clue
+    <set>
+      <if test="clueName != null">
+        clue_name = #{clueName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="seatPhone != null">
+        seat_phone = #{seatPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneBak != null">
+        phone_bak = #{phoneBak,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null">
+        post_code = #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        region = #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="currentStage != null">
+        current_stage = #{currentStage,jdbcType=VARCHAR},
+      </if>
+      <if test="currentGrade != null">
+        current_grade = #{currentGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null">
+        school = #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="homeAddress != null">
+        home_address = #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="incomingIntent != null">
+        incoming_intent = #{incomingIntent,jdbcType=VARCHAR},
+      </if>
+      <if test="intentLevel != null">
+        intent_level = #{intentLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="initChannel != null">
+        init_channel = #{initChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="qqNumber != null">
+        qq_number = #{qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="newChannel != null">
+        new_channel = #{newChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCommunitedTime != null">
+        last_communited_time = #{lastCommunitedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nextCommuniteTime != null">
+        next_communite_time = #{nextCommuniteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activeTime != null">
+        active_time = #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="followUserId != null">
+        follow_user_id = #{followUserId,jdbcType=BIGINT},
+      </if>
+      <if test="followStatus != null">
+        follow_status = #{followStatus,jdbcType=TINYINT},
+      </if>
+      <if test="forwardStatus != null">
+        forward_status = #{forwardStatus,jdbcType=TINYINT},
+      </if>
+      <if test="instituteStatus != null">
+        institute_status = #{instituteStatus,jdbcType=TINYINT},
+      </if>
+      <if test="signStatus != null">
+        sign_status = #{signStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createUserId != null">
+        create_user_id = #{createUserId,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="createAt != null">
+        create_at = #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateAt != null">
+        update_at = #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="studentId != null">
+        student_id = #{studentId,jdbcType=VARCHAR},
+      </if>
+      <if test="seaAreaId != null">
+        sea_area_id = #{seaAreaId,jdbcType=VARCHAR},
+      </if>
+      <if test="tagId != null">
+        tag_id = #{tagId,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null">
+        province_code = #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceValue != null">
+        province_value = #{provinceValue,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityValue != null">
+        city_value = #{cityValue,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        area_code = #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaValue != null">
+        area_value = #{areaValue,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    update t_crm_clue
+    set clue_name = #{clueName,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      seat_phone = #{seatPhone,jdbcType=VARCHAR},
+      phone_bak = #{phoneBak,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      post_code = #{postCode,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      region = #{region,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=VARCHAR},
+      current_stage = #{currentStage,jdbcType=VARCHAR},
+      current_grade = #{currentGrade,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      home_address = #{homeAddress,jdbcType=VARCHAR},
+      incoming_intent = #{incomingIntent,jdbcType=VARCHAR},
+      intent_level = #{intentLevel,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      init_channel = #{initChannel,jdbcType=VARCHAR},
+      qq_number = #{qqNumber,jdbcType=VARCHAR},
+      new_channel = #{newChannel,jdbcType=VARCHAR},
+      last_communited_time = #{lastCommunitedTime,jdbcType=TIMESTAMP},
+      next_communite_time = #{nextCommuniteTime,jdbcType=TIMESTAMP},
+      active_time = #{activeTime,jdbcType=TIMESTAMP},
+      follow_user_id = #{followUserId,jdbcType=BIGINT},
+      follow_status = #{followStatus,jdbcType=TINYINT},
+      forward_status = #{forwardStatus,jdbcType=TINYINT},
+      institute_status = #{instituteStatus,jdbcType=TINYINT},
+      sign_status = #{signStatus,jdbcType=TINYINT},
+      create_user_id = #{createUserId,jdbcType=BIGINT},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      create_at = #{createAt,jdbcType=TIMESTAMP},
+      update_at = #{updateAt,jdbcType=TIMESTAMP},
+      student_id = #{studentId,jdbcType=VARCHAR},
+      sea_area_id = #{seaAreaId,jdbcType=VARCHAR},
+      tag_id = #{tagId,jdbcType=VARCHAR},
+      province_code = #{provinceCode,jdbcType=VARCHAR},
+      province_value = #{provinceValue,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      city_value = #{cityValue,jdbcType=VARCHAR},
+      area_code = #{areaCode,jdbcType=VARCHAR},
+      area_value = #{areaValue,jdbcType=VARCHAR},
+      state = #{state,jdbcType=TINYINT},
+      nickname = #{nickname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.example.mybatisgenerator.model.entity.online.Clue">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="clue_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="user_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pwd" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="seat_phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone_bak" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="post_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="birthday" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="grade" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="customer_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="current_stage" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="current_grade" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="school" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="valid" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="home_address" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="incoming_intent" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="intent_level" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="gender" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="init_channel" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="qq_number" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="new_channel" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="last_communited_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="next_communite_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="active_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="follow_user_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="follow_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="forward_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="institute_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="sign_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="create_user_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="is_deleted" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="create_at" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="update_at" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="student_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sea_area_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="province_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="province_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="area_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="area_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="state" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="nickname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="entry_way" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="merchant_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="dept_data_permission_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.example.mybatisgenerator.model.entity.online.Clue">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="clue_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="user_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pwd" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="seat_phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone_bak" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="post_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="birthday" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="grade" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="customer_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="current_stage" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="current_grade" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="school" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="valid" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="home_address" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="incoming_intent" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="intent_level" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="gender" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="init_channel" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="qq_number" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="new_channel" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="last_communited_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="next_communite_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="active_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="follow_user_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="follow_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="forward_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="institute_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="sign_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="create_user_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="is_deleted" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="create_at" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="update_at" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="student_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sea_area_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="province_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="province_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="area_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="area_value" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="state" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="nickname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="entry_way" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="merchant_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="dept_data_permission_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="tag_id" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, clue_name, user_id, pwd, phone, seat_phone, phone_bak, email, post_code, birthday, 
+    grade, customer_id, current_stage, current_grade, school, valid, home_address, incoming_intent, 
+    intent_level, gender, remark, init_channel, qq_number, new_channel, last_communited_time, 
+    next_communite_time, active_time, follow_user_id, follow_status, forward_status, 
+    institute_status, sign_status, create_user_id, is_deleted, create_at, update_at, 
+    student_id, sea_area_id, province_code, province_value, city_code, city_value, area_code, 
+    area_value, state, nickname, entry_way, merchant_id, dept_data_permission_id
+  </sql>
+  <sql id="Blob_Column_List">
+    tag_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_crm_clue
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_crm_clue
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    insert into t_crm_clue (id, clue_name, user_id, 
+      pwd, phone, seat_phone, 
+      phone_bak, email, post_code, 
+      birthday, grade, customer_id, 
+      current_stage, current_grade, school, 
+      valid, home_address, incoming_intent, 
+      intent_level, gender, remark, 
+      init_channel, qq_number, new_channel, 
+      last_communited_time, next_communite_time, 
+      active_time, follow_user_id, follow_status, 
+      forward_status, institute_status, sign_status, 
+      create_user_id, is_deleted, create_at, 
+      update_at, student_id, sea_area_id, 
+      province_code, province_value, city_code, 
+      city_value, area_code, area_value, 
+      state, nickname, entry_way, 
+      merchant_id, dept_data_permission_id, tag_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{clueName,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{pwd,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{seatPhone,jdbcType=VARCHAR}, 
+      #{phoneBak,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=VARCHAR}, #{grade,jdbcType=VARCHAR}, #{customerId,jdbcType=VARCHAR}, 
+      #{currentStage,jdbcType=VARCHAR}, #{currentGrade,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=TINYINT}, #{homeAddress,jdbcType=VARCHAR}, #{incomingIntent,jdbcType=VARCHAR}, 
+      #{intentLevel,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{initChannel,jdbcType=VARCHAR}, #{qqNumber,jdbcType=VARCHAR}, #{newChannel,jdbcType=VARCHAR}, 
+      #{lastCommunitedTime,jdbcType=TIMESTAMP}, #{nextCommuniteTime,jdbcType=TIMESTAMP}, 
+      #{activeTime,jdbcType=TIMESTAMP}, #{followUserId,jdbcType=BIGINT}, #{followStatus,jdbcType=TINYINT}, 
+      #{forwardStatus,jdbcType=TINYINT}, #{instituteStatus,jdbcType=TINYINT}, #{signStatus,jdbcType=TINYINT}, 
+      #{createUserId,jdbcType=BIGINT}, #{isDeleted,jdbcType=TINYINT}, #{createAt,jdbcType=TIMESTAMP}, 
+      #{updateAt,jdbcType=TIMESTAMP}, #{studentId,jdbcType=VARCHAR}, #{seaAreaId,jdbcType=VARCHAR}, 
+      #{provinceCode,jdbcType=VARCHAR}, #{provinceValue,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, 
+      #{cityValue,jdbcType=VARCHAR}, #{areaCode,jdbcType=VARCHAR}, #{areaValue,jdbcType=VARCHAR}, 
+      #{state,jdbcType=TINYINT}, #{nickname,jdbcType=VARCHAR}, #{entryWay,jdbcType=VARCHAR}, 
+      #{merchantId,jdbcType=BIGINT}, #{deptDataPermissionId,jdbcType=BIGINT}, #{tagId,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    insert into t_crm_clue
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="clueName != null">
+        clue_name,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="seatPhone != null">
+        seat_phone,
+      </if>
+      <if test="phoneBak != null">
+        phone_bak,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="postCode != null">
+        post_code,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="grade != null">
+        grade,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="currentStage != null">
+        current_stage,
+      </if>
+      <if test="currentGrade != null">
+        current_grade,
+      </if>
+      <if test="school != null">
+        school,
+      </if>
+      <if test="valid != null">
+        valid,
+      </if>
+      <if test="homeAddress != null">
+        home_address,
+      </if>
+      <if test="incomingIntent != null">
+        incoming_intent,
+      </if>
+      <if test="intentLevel != null">
+        intent_level,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="initChannel != null">
+        init_channel,
+      </if>
+      <if test="qqNumber != null">
+        qq_number,
+      </if>
+      <if test="newChannel != null">
+        new_channel,
+      </if>
+      <if test="lastCommunitedTime != null">
+        last_communited_time,
+      </if>
+      <if test="nextCommuniteTime != null">
+        next_communite_time,
+      </if>
+      <if test="activeTime != null">
+        active_time,
+      </if>
+      <if test="followUserId != null">
+        follow_user_id,
+      </if>
+      <if test="followStatus != null">
+        follow_status,
+      </if>
+      <if test="forwardStatus != null">
+        forward_status,
+      </if>
+      <if test="instituteStatus != null">
+        institute_status,
+      </if>
+      <if test="signStatus != null">
+        sign_status,
+      </if>
+      <if test="createUserId != null">
+        create_user_id,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="createAt != null">
+        create_at,
+      </if>
+      <if test="updateAt != null">
+        update_at,
+      </if>
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="seaAreaId != null">
+        sea_area_id,
+      </if>
+      <if test="provinceCode != null">
+        province_code,
+      </if>
+      <if test="provinceValue != null">
+        province_value,
+      </if>
+      <if test="cityCode != null">
+        city_code,
+      </if>
+      <if test="cityValue != null">
+        city_value,
+      </if>
+      <if test="areaCode != null">
+        area_code,
+      </if>
+      <if test="areaValue != null">
+        area_value,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="entryWay != null">
+        entry_way,
+      </if>
+      <if test="merchantId != null">
+        merchant_id,
+      </if>
+      <if test="deptDataPermissionId != null">
+        dept_data_permission_id,
+      </if>
+      <if test="tagId != null">
+        tag_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="clueName != null">
+        #{clueName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="seatPhone != null">
+        #{seatPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneBak != null">
+        #{phoneBak,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null">
+        #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="currentStage != null">
+        #{currentStage,jdbcType=VARCHAR},
+      </if>
+      <if test="currentGrade != null">
+        #{currentGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null">
+        #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null">
+        #{valid,jdbcType=TINYINT},
+      </if>
+      <if test="homeAddress != null">
+        #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="incomingIntent != null">
+        #{incomingIntent,jdbcType=VARCHAR},
+      </if>
+      <if test="intentLevel != null">
+        #{intentLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="initChannel != null">
+        #{initChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="qqNumber != null">
+        #{qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="newChannel != null">
+        #{newChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCommunitedTime != null">
+        #{lastCommunitedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nextCommuniteTime != null">
+        #{nextCommuniteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activeTime != null">
+        #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="followUserId != null">
+        #{followUserId,jdbcType=BIGINT},
+      </if>
+      <if test="followStatus != null">
+        #{followStatus,jdbcType=TINYINT},
+      </if>
+      <if test="forwardStatus != null">
+        #{forwardStatus,jdbcType=TINYINT},
+      </if>
+      <if test="instituteStatus != null">
+        #{instituteStatus,jdbcType=TINYINT},
+      </if>
+      <if test="signStatus != null">
+        #{signStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createUserId != null">
+        #{createUserId,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="createAt != null">
+        #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateAt != null">
+        #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="studentId != null">
+        #{studentId,jdbcType=VARCHAR},
+      </if>
+      <if test="seaAreaId != null">
+        #{seaAreaId,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null">
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceValue != null">
+        #{provinceValue,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityValue != null">
+        #{cityValue,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaValue != null">
+        #{areaValue,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="entryWay != null">
+        #{entryWay,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantId != null">
+        #{merchantId,jdbcType=BIGINT},
+      </if>
+      <if test="deptDataPermissionId != null">
+        #{deptDataPermissionId,jdbcType=BIGINT},
+      </if>
+      <if test="tagId != null">
+        #{tagId,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    update t_crm_clue
+    <set>
+      <if test="clueName != null">
+        clue_name = #{clueName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="seatPhone != null">
+        seat_phone = #{seatPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneBak != null">
+        phone_bak = #{phoneBak,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null">
+        post_code = #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null">
+        grade = #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="currentStage != null">
+        current_stage = #{currentStage,jdbcType=VARCHAR},
+      </if>
+      <if test="currentGrade != null">
+        current_grade = #{currentGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="school != null">
+        school = #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null">
+        valid = #{valid,jdbcType=TINYINT},
+      </if>
+      <if test="homeAddress != null">
+        home_address = #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="incomingIntent != null">
+        incoming_intent = #{incomingIntent,jdbcType=VARCHAR},
+      </if>
+      <if test="intentLevel != null">
+        intent_level = #{intentLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="initChannel != null">
+        init_channel = #{initChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="qqNumber != null">
+        qq_number = #{qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="newChannel != null">
+        new_channel = #{newChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCommunitedTime != null">
+        last_communited_time = #{lastCommunitedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nextCommuniteTime != null">
+        next_communite_time = #{nextCommuniteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activeTime != null">
+        active_time = #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="followUserId != null">
+        follow_user_id = #{followUserId,jdbcType=BIGINT},
+      </if>
+      <if test="followStatus != null">
+        follow_status = #{followStatus,jdbcType=TINYINT},
+      </if>
+      <if test="forwardStatus != null">
+        forward_status = #{forwardStatus,jdbcType=TINYINT},
+      </if>
+      <if test="instituteStatus != null">
+        institute_status = #{instituteStatus,jdbcType=TINYINT},
+      </if>
+      <if test="signStatus != null">
+        sign_status = #{signStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createUserId != null">
+        create_user_id = #{createUserId,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="createAt != null">
+        create_at = #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateAt != null">
+        update_at = #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="studentId != null">
+        student_id = #{studentId,jdbcType=VARCHAR},
+      </if>
+      <if test="seaAreaId != null">
+        sea_area_id = #{seaAreaId,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null">
+        province_code = #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceValue != null">
+        province_value = #{provinceValue,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityValue != null">
+        city_value = #{cityValue,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        area_code = #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaValue != null">
+        area_value = #{areaValue,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="entryWay != null">
+        entry_way = #{entryWay,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantId != null">
+        merchant_id = #{merchantId,jdbcType=BIGINT},
+      </if>
+      <if test="deptDataPermissionId != null">
+        dept_data_permission_id = #{deptDataPermissionId,jdbcType=BIGINT},
+      </if>
+      <if test="tagId != null">
+        tag_id = #{tagId,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    update t_crm_clue
+    set clue_name = #{clueName,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      seat_phone = #{seatPhone,jdbcType=VARCHAR},
+      phone_bak = #{phoneBak,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      post_code = #{postCode,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      grade = #{grade,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=VARCHAR},
+      current_stage = #{currentStage,jdbcType=VARCHAR},
+      current_grade = #{currentGrade,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      valid = #{valid,jdbcType=TINYINT},
+      home_address = #{homeAddress,jdbcType=VARCHAR},
+      incoming_intent = #{incomingIntent,jdbcType=VARCHAR},
+      intent_level = #{intentLevel,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      init_channel = #{initChannel,jdbcType=VARCHAR},
+      qq_number = #{qqNumber,jdbcType=VARCHAR},
+      new_channel = #{newChannel,jdbcType=VARCHAR},
+      last_communited_time = #{lastCommunitedTime,jdbcType=TIMESTAMP},
+      next_communite_time = #{nextCommuniteTime,jdbcType=TIMESTAMP},
+      active_time = #{activeTime,jdbcType=TIMESTAMP},
+      follow_user_id = #{followUserId,jdbcType=BIGINT},
+      follow_status = #{followStatus,jdbcType=TINYINT},
+      forward_status = #{forwardStatus,jdbcType=TINYINT},
+      institute_status = #{instituteStatus,jdbcType=TINYINT},
+      sign_status = #{signStatus,jdbcType=TINYINT},
+      create_user_id = #{createUserId,jdbcType=BIGINT},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      create_at = #{createAt,jdbcType=TIMESTAMP},
+      update_at = #{updateAt,jdbcType=TIMESTAMP},
+      student_id = #{studentId,jdbcType=VARCHAR},
+      sea_area_id = #{seaAreaId,jdbcType=VARCHAR},
+      province_code = #{provinceCode,jdbcType=VARCHAR},
+      province_value = #{provinceValue,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      city_value = #{cityValue,jdbcType=VARCHAR},
+      area_code = #{areaCode,jdbcType=VARCHAR},
+      area_value = #{areaValue,jdbcType=VARCHAR},
+      state = #{state,jdbcType=TINYINT},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      entry_way = #{entryWay,jdbcType=VARCHAR},
+      merchant_id = #{merchantId,jdbcType=BIGINT},
+      dept_data_permission_id = #{deptDataPermissionId,jdbcType=BIGINT},
+      tag_id = #{tagId,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.mybatisgenerator.model.entity.online.Clue">
+    update t_crm_clue
+    set clue_name = #{clueName,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      seat_phone = #{seatPhone,jdbcType=VARCHAR},
+      phone_bak = #{phoneBak,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      post_code = #{postCode,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      grade = #{grade,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=VARCHAR},
+      current_stage = #{currentStage,jdbcType=VARCHAR},
+      current_grade = #{currentGrade,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      valid = #{valid,jdbcType=TINYINT},
+      home_address = #{homeAddress,jdbcType=VARCHAR},
+      incoming_intent = #{incomingIntent,jdbcType=VARCHAR},
+      intent_level = #{intentLevel,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      init_channel = #{initChannel,jdbcType=VARCHAR},
+      qq_number = #{qqNumber,jdbcType=VARCHAR},
+      new_channel = #{newChannel,jdbcType=VARCHAR},
+      last_communited_time = #{lastCommunitedTime,jdbcType=TIMESTAMP},
+      next_communite_time = #{nextCommuniteTime,jdbcType=TIMESTAMP},
+      active_time = #{activeTime,jdbcType=TIMESTAMP},
+      follow_user_id = #{followUserId,jdbcType=BIGINT},
+      follow_status = #{followStatus,jdbcType=TINYINT},
+      forward_status = #{forwardStatus,jdbcType=TINYINT},
+      institute_status = #{instituteStatus,jdbcType=TINYINT},
+      sign_status = #{signStatus,jdbcType=TINYINT},
+      create_user_id = #{createUserId,jdbcType=BIGINT},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      create_at = #{createAt,jdbcType=TIMESTAMP},
+      update_at = #{updateAt,jdbcType=TIMESTAMP},
+      student_id = #{studentId,jdbcType=VARCHAR},
+      sea_area_id = #{seaAreaId,jdbcType=VARCHAR},
+      province_code = #{provinceCode,jdbcType=VARCHAR},
+      province_value = #{provinceValue,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      city_value = #{cityValue,jdbcType=VARCHAR},
+      area_code = #{areaCode,jdbcType=VARCHAR},
+      area_value = #{areaValue,jdbcType=VARCHAR},
+      state = #{state,jdbcType=TINYINT},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      entry_way = #{entryWay,jdbcType=VARCHAR},
+      merchant_id = #{merchantId,jdbcType=BIGINT},
+      dept_data_permission_id = #{deptDataPermissionId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
