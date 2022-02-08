@@ -16,8 +16,11 @@
     <!--   mysql win7-->
     <!--    <classPathEntry  location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>-->
     <!--   mysql win10-->
+<!--    <classPathEntry-->
+<!--            location="C:\Users\admin\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>-->
+<!--    -->
     <classPathEntry
-            location="C:\Users\admin\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>
+            location="C:\Users\86185\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>
 
     <context id="context" targetRuntime="MyBatis3">
         <commentGenerator>
@@ -82,25 +85,25 @@
             domainObjectName:指定了实体类的名称
         -->
 
-        <table tableName="t_crm_clue" domainObjectName="Clue"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-            <!--            &lt;!&ndash;使用驼峰命名&ndash;&gt;-->
-            <!--            <property name="useActualColumnNames" value="false"/>-->
-            <!--            &lt;!&ndash; 去除前缀&ndash;&gt;-->
-            <!--            <domainObjectRenamingRule searchString="^t" replaceString=""/>-->
-        </table>
-        <table tableName="t_crm_tag_info" domainObjectName="TagInfo"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-            <!--            &lt;!&ndash;使用驼峰命名&ndash;&gt;-->
-            <!--            <property name="useActualColumnNames" value="false"/>-->
-            <!--            &lt;!&ndash; 去除前缀&ndash;&gt;-->
-            <!--            <domainObjectRenamingRule searchString="^t" replaceString=""/>-->
-        </table>
-        <table tableName="t_crm_tag_type" domainObjectName="TagType"
+<!--        <table tableName="t_crm_clue" domainObjectName="Clue"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               selectByExampleQueryId="false">-->
+<!--            &lt;!&ndash;            &lt;!&ndash;使用驼峰命名&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;            <property name="useActualColumnNames" value="false"/>&ndash;&gt;-->
+<!--            &lt;!&ndash;            &lt;!&ndash; 去除前缀&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;            <domainObjectRenamingRule searchString="^t" replaceString=""/>&ndash;&gt;-->
+<!--        </table>-->
+<!--        <table tableName="t_crm_tag_info" domainObjectName="TagInfo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               selectByExampleQueryId="false">-->
+<!--            &lt;!&ndash;            &lt;!&ndash;使用驼峰命名&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;            <property name="useActualColumnNames" value="false"/>&ndash;&gt;-->
+<!--            &lt;!&ndash;            &lt;!&ndash; 去除前缀&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;            <domainObjectRenamingRule searchString="^t" replaceString=""/>&ndash;&gt;-->
+<!--        </table>-->
+        <table tableName="person" domainObjectName="Person"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
